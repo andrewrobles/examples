@@ -2,21 +2,22 @@
 <body>
   <div id='list'></div>
 <script>
-  var list = ['p1', 'p2', 'p3']
+  var LIST_LENGTH = 3
   function styleDiv(id, color) {
     var element = document.getElementById(id)
     element.style.height = '100px'
     element.style.backgroundColor = color
   }
-  for(let i = 0; i < list.length; i++) {
+  for(let i = 0; i < LIST_LENGTH; i++) {
     var tag = document.createElement('p');
-    tag.id=list[i]
+    // tag.id=list[i]
+    tag.id='p' + i
     var element = document.getElementById('list');
     element.appendChild(tag);
   }
-  styleDiv('p1', '#00FF00')
-  styleDiv('p2', '#FF0000')
-  styleDiv('p3', '#0000FF')
+  styleDiv('p0', '#00FF00')
+  styleDiv('p1', '#FF0000')
+  styleDiv('p2', '#0000FF')
 </script>
 </body>
 </html>
