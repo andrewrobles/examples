@@ -1,0 +1,22 @@
+<html>
+<body>
+  <div id='list'></div>
+<script>
+  var list = ['p1', 'p2', 'p3']
+  function styleDiv(id, color) {
+    var element = document.getElementById(id)
+    element.style.height = '100px'
+    element.style.backgroundColor = color
+  }
+  for(let i = 0; i < list.length; i++) {
+    var tag = document.createElement('p');
+    tag.id=list[i]
+    var element = document.getElementById('list');
+    element.appendChild(tag);
+  }
+  styleDiv('p1', '#00FF00')
+  styleDiv('p2', '#FF0000')
+  styleDiv('p3', '#0000FF')
+</script>
+</body>
+</html>
