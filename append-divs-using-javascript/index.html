@@ -2,22 +2,19 @@
 <body>
   <div id='list'></div>
 <script>
-  var LIST_LENGTH = 3
+  const list = ['#00FF00', '#FF0000', '#0000FF']
   function styleDiv(id, color) {
-    var element = document.getElementById(id)
+    const element = document.getElementById(id)
     element.style.height = '100px'
     element.style.backgroundColor = color
   }
-  for(let i = 0; i < LIST_LENGTH; i++) {
-    var tag = document.createElement('p');
-    // tag.id=list[i]
+  for(let i = 0; i < list.length; i++) {
+    const tag = document.createElement('p');
     tag.id='p' + i
-    var element = document.getElementById('list');
+    const element = document.getElementById('list');
     element.appendChild(tag);
+    styleDiv(tag.id, list[i])
   }
-  styleDiv('p0', '#00FF00')
-  styleDiv('p1', '#FF0000')
-  styleDiv('p2', '#0000FF')
 </script>
 </body>
 </html>
