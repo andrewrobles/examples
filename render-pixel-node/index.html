@@ -49,17 +49,6 @@
        }
    }
 
-
-  function drawPunk( q, designs, zoom=1 ) {
-    let canvas = document.querySelector( q )
-    canvas.width  = designs[0].width*zoom;
-    canvas.height = designs[0].height*zoom;
-    let ctx = canvas.getContext( '2d' );
-    for( let design of designs ) {
-        design.draw( ctx, zoom );
-    }
-}
-
 const example_design = `@`;
 
 const parsed_design = Pixelart.parse( example_design, {
@@ -71,7 +60,11 @@ const parsed_design = Pixelart.parse( example_design, {
       tag.id = 'punk' + 0
       var element = document.getElementById('punks')
       element.appendChild(tag)
-      drawPunk('#punk' + 0, [parsed_design], 20 )    
+      let canvas = document.querySelector( '#punk0' )  
+      canvas.width  = parsed_design.width*20;
+      canvas.height = parsed_design.height*20;
+      let ctx = canvas.getContext( '2d' );
+      parsed_design.draw(ctx, 20)
   </script>
 </body>
 
