@@ -1,0 +1,20 @@
+<html>
+<body>
+  <div id='list'></div>
+<script>
+  const list = ['#00FF00', '#FF0000', '#0000FF']
+  function styleDiv(id, color) {
+    const element = document.getElementById(id)
+    element.style.height = '100px'
+    element.style.backgroundColor = color
+  }
+  for(let i = 0; i < list.length; i++) {
+    const tag = document.createElement('p');
+    tag.id='p' + i
+    const element = document.getElementById('list');
+    element.appendChild(tag);
+    styleDiv(tag.id, list[i])
+  }
+</script>
+</body>
+</html>
