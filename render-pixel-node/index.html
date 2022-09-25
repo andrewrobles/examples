@@ -50,27 +50,19 @@
    }
 
 
-   function drawPunk( q, designs, zoom=1 ) {
-    // convenience helper / hack; lets you pass in id of canvas element
-    //   other assume canvas element passed in (use as is)
-   let canvas =  (typeof q === 'string') ?  document.querySelector( q ) : q;
-
-   // note: use width/height from first design
-   canvas.width  = designs[0].width*zoom;
-   canvas.height = designs[0].height*zoom;
-
-  //  console.log( ` canvas width x height: ${canvas.width} x ${canvas.height}` );
-
-   let ctx = canvas.getContext( '2d' );
-
-   for( let design of designs ) {
-      design.draw( ctx, zoom );
-   }
+  function drawPunk( q, designs, zoom=1 ) {
+    let canvas = document.querySelector( q )
+    canvas.width  = designs[0].width*zoom;
+    canvas.height = designs[0].height*zoom;
+    let ctx = canvas.getContext( '2d' );
+    for( let design of designs ) {
+        design.draw( ctx, zoom );
+    }
 }
 
 const example_design = `@`;
 
-const human_light = Pixelart.parse( example_design, {
+const parsed_design = Pixelart.parse( example_design, {
   colors: {
     '@':  '#000000',   
   }} );
@@ -79,11 +71,7 @@ const human_light = Pixelart.parse( example_design, {
       tag.id = 'punk' + 0
       var element = document.getElementById('punks')
       element.appendChild(tag)
-      let design = []
-      design.push( human_light )
-      drawPunk('#punk' + 0, design, 20 )
-      drawCryptoPunkById('#punk' + 0)
-    
+      drawPunk('#punk' + 0, [parsed_design], 20 )    
   </script>
 </body>
 
