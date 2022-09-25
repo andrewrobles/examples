@@ -1,4 +1,4 @@
-scratchpad
+Scratchpad
 ======
 
 Code I'm tinkering with, sometimes borrowed from strangers on the internet.
