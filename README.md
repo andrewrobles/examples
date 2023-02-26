@@ -1,6 +1,6 @@
 # Examples
 
-In this repository you will find the following code examples:
+Code examples of the following concepts:
 
 - Dynamic HTML List
 - Express API Endpoint
