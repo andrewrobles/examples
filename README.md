@@ -7,3 +7,5 @@ Code examples of the following concepts:
 - Rendered HTML File
 - HTML Canvas Rectangle
 - React Canvas Rectangle
+- Basic Redux Store
+- Redux Toolkit Store
